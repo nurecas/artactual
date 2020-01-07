@@ -1,0 +1,199 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+    <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
+    <script language="javascript" type="text/javascript" src="libraries/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="RealDraw.js"></script>
+    <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+    <!-- This line removes any default padding and style.
+       You might only need one of these values set. -->
+
+    <script>
+        var data;
+        Papa.parse('assets/labels.csv', {
+            header: true,
+            download: true,
+            dynamicTyping: true,
+            complete: function(results) {
+                arrayToTable(results.data);
+                $('.labelBtn').click(function() {
+                    var id = $(this).attr('id');
+                    var labelIndex = id.substring(5, id.length);
+                    currentLabelIndex = labelIndex;
+                    getCurrentColor(labelIndex);
+                    $('.labelBtn').removeClass("clicked");
+                    $(this).addClass("clicked");
+                });
+
+            }
+        });
+
+        function arrayToTable(tableData) {
+            $(tableData).each(function(i, rowData) {
+                $(rowData).each(function(j, cellData) {
+                    switch (cellData.Type) {
+                        case "animal":
+                            $('#animalDropup').append($("<li><button role='button' id=label" + cellData.ID + " class='btn labelBtn itemBtn'>" + cellData.Label + "</button></li>"));
+                            break;
+                        case "interior":
+                            $('#interiorDropup').append($("<li><button role='button' id=label" + cellData.ID + " class='btn labelBtn itemBtn'>" + cellData.Label + "</button></li>"));
+                            break;
+
+                        case "exterior":
+                            $('#exteriorDropup').append($("<li><button role='button' id=label" + cellData.ID + " class='btn labelBtn itemBtn'>" + cellData.Label + "</button></li>"));
+                            break;
+
+                        case "transport":
+                            $('#transportDropup').append($("<li><button role='button' id=label" + cellData.ID + " class='btn labelBtn itemBtn'>" + cellData.Label + "</button></li>"));
+                            break;
+
+                        case "food":
+                            $('#foodDropup').append($("<li><button role='button' id=label" + cellData.ID + " class='btn labelBtn itemBtn'>" + cellData.Label + "</button></li>"));
+                            break;
+                        case "misc":
+                            $('#miscDropup').append($("<li><button role='button' id=label" + cellData.ID + " class='btn labelBtn itemBtn'>" + cellData.Label + "</button></li>"));
+                            break;
+                    }
+                    //                    a.append($("<button class='labelBtn' id=label" + cellData.ID + ">" + cellData.Label + "</button>"));
+                });
+            });
+        }
+
+    </script>
+</head>
+
+<body scroll="no">
+    <div id="controlContainer">
+        <img id="home" src="images/home.png">
+        <!--
+        <img id="undo" class="tool" src="images/undo.png">
+        <img class="tool" src="images/redo.png">
+-->
+        <table class="titleSet">
+            <tr>
+                <td>
+                    <p class="title">#ArtActual</p>
+                </td>
+            </tr>
+        </table>
+
+        <table class="iconSet">
+            <tr>
+                <td>
+                    <img id="save" class="tool save" src="images/home.png">
+                </td>
+                <td>
+                    <img id="clear" class="tool clear" src="images/reload.png">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="iconText save">Save</p>
+                </td>
+                <td>
+                    <p class="iconText clear">Reset</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--
+    <div id="rContainer">
+
+    </div>
+-->
+    <div class="sidenav">
+        <input type="range" id="brushSizeSlider" min="1" max="400" value="120" class="slider">
+    </div>
+    <table class="main_div">
+        <tr>
+            <td valign="bottom">
+                <button role="button" class="brushBtn btn-circle btn-xl" data-toggle="collapse" data-target="#categoryBar">
+                    <img class="icon" src="images/brush.png">
+                </button>
+            </td>
+            <td valign="bottom">
+                <div id="categoryBar" class="dropup collapse hide width">
+                    <table>
+                        <tr>
+                            <td valign="center">
+                                <button class="btn dropUp dropdown-toggle" type="button" data-toggle="dropdown">Animals
+                                </button>
+                                <ul class="dropdown-menu" id="animalDropup">
+                                </ul>
+                            </td>
+                            <td valign="center">
+                                <button class="btn dropUp dropdown-toggle" type="button" data-toggle="dropdown">Food
+                                </button>
+                                <ul class="dropdown-menu" id="foodDropup">
+                                </ul>
+                            </td>
+                            <td valign="center">
+                                <button class="btn dropUp dropdown-toggle" type="button" data-toggle="dropdown">Interior
+                                </button>
+                                <ul class="dropdown-menu" id="interiorDropup">
+                                </ul>
+                            </td>
+                            <td valign="center">
+                                <button class="btn dropUp dropdown-toggle" type="button" data-toggle="dropdown">Exterior
+                                </button>
+                                <ul class="dropdown-menu" id="exteriorDropup">
+                                </ul>
+                            </td>
+                            <td valign="center">
+                                <button class="btn dropUp dropdown-toggle" type="button" data-toggle="dropdown">Transport
+                                </button>
+                                <ul class="dropdown-menu" id="transportDropup">
+                                </ul>
+                            </td>
+                            <td valign="center">
+                                <button class="btn dropUp dropdown-toggle" type="button" data-toggle="dropdown">Misc
+                                </button>
+                                <ul class="dropdown-menu" id="miscDropup">
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+
+    <script>
+        var slider = document.getElementById("brushSizeSlider");
+        bruSize = slider.value;
+        slider.oninput = function() {
+            bruSize = this.value;
+        }
+        $('.clear').click(function() {
+            drawing.background(color('#000000'));
+            sendImage();
+            renderNewImg = true;
+        });
+        $('.save').click(function() {
+            saveImage();
+        });
+        $('.dropUp .btn').click(function() {
+            allowDraw = false;
+        });
+        $(".dropdown-menu").on("click change", function(e) {
+            allowDraw = true;
+        });
+
+    </script>
+</body>
+
+</html>

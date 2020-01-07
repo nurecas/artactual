@@ -1,0 +1,402 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: #484848;
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge*/
+    user-select: none;
+    /* Non-prefixed version, currently 
+                                  not supported by any browser */
+}
+
+
+#rContainer {
+    background-color: #444444;
+    height: 78%;
+    left: 90%;
+    right: 0px;
+    top: 150px;
+    position: absolute;
+    overflow: scroll;
+
+
+
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+
+.labelBtn {
+    margin: 10px;
+    border-width: 1px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.clicked {
+    background-color: cornflowerblue !important;
+}
+
+.controlBtn {
+    margin: 10px;
+    border-width: 1px;
+    background-color: #444444;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.labelBtn:hover {
+    background-color: white;
+    /* Green */
+    color: #4CAF50;
+}
+
+.controlBtn:hover {
+    background-color: #4CAF50;
+    /* Green */
+    color: white;
+}
+
+.slider {
+    -webkit-appearance: none;
+    /* Override default CSS styles */
+    appearance: round;
+    /* Full-width */
+    height: 6px;
+    /* Specified height */
+    background: #d3d3d3;
+    /* Grey background */
+    outline: none;
+    /* Remove outline */
+    opacity: 0.7;
+    /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s;
+    /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1;
+    /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: round;
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: #35aca8;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+    border-radius: 50px;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: #4CAF50;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+}
+
+.sidenav {
+    width: 40px;
+    position: fixed;
+    z-index: 10000;
+    top: 24vh;
+    height: 400px;
+    left: 0px;
+    background: #323232;
+    overflow-x: hidden;
+    padding: 8px 0;
+    border-top-right-radius: 72px;
+    border-bottom-right-radius: 72px;
+}
+
+#brushSizeSlider {
+    width: 300px;
+    margin-left: -130px;
+    transform: rotate(270deg);
+    margin-top: 190px;
+}
+
+#header {
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: #222222;
+}
+
+
+#controlContainer {
+    background-color: #121212;
+    width: 100%;
+    left: 0;
+    position: fixed;
+}
+
+.collapse {
+    visibility: hidden;
+}
+
+.collapse.show {
+    visibility: visible;
+    display: block;
+}
+
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition-property: height, visibility;
+    transition-property: height, visibility;
+    -webkit-transition-duration: 0.35s;
+    transition-duration: 0.35s;
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+
+.collapsing.width {
+    -webkit-transition-property: width, visibility;
+    transition-property: width, visibility;
+    width: 0;
+    height: auto;
+}
+
+
+
+.aria-expanded {
+    visibility: visible;
+}
+
+.btn-circle.btn-sm {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    font-size: 8px;
+    text-align: center;
+}
+
+.btn-circle.btn-md {
+    width: 50px;
+    height: 50px;
+    padding: 7px 10px;
+    border-radius: 25px;
+    font-size: 10px;
+    text-align: center;
+}
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#categoryBar {
+    margin-bottom: 20px;
+    height: 50px;
+}
+
+
+.btn {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.dropUp {
+    height: 50px;
+    width: 160px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    background-color: #323232;
+    color: #e3e3e3;
+    border-color: #323232;
+    border-width: 0px;
+}
+
+
+.dropUp:hover {
+    background-color: #181818;
+    border-color: #181818;
+    color: #e3e3e3;
+}
+
+.dropUp:focus {
+    background-color: #242424;
+    border-color: #242424;
+    color: #e3e3e3;
+    outline: 0;
+    box-shadow: none;
+}
+
+.dropdown-menu {
+    background-color: #242424;
+    width: 140px;
+    text-align: center;
+    height: 500px;
+    /*    overflow: scroll;*/
+    overflow-x: hidden;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background-color: #323232;
+}
+
+.itemBtn {
+    width: 120px;
+    border-radius: 0px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #323232;
+    color: #e3e3e3;
+    border-color: #323232;
+    border-width: 0px;
+}
+
+
+.itemBtn:hover {
+    background-color: #181818;
+    border-color: #181818;
+    color: #e3e3e3;
+}
+
+.brushBtn {
+    margin: 10px;
+    background-color: #35aca8;
+    border-color: #35aca8;
+}
+
+.brushBtn:focus {
+    outline: none;
+}
+
+.icon {
+    height: 40px;
+}
+
+.main_div {
+    height: 100%;
+    border-collapse: collapse;
+    position: fixed;
+    z-index: 1000;
+}
+
+
+.tool {
+    width: 20px;
+    margin: 18px 24px 2px 24px;
+    cursor: pointer;
+}
+
+.iconText {
+    color: white;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.iconSet {
+    text-align: center;
+    float: right;
+}
+
+.titleSet {
+    color: white;
+    width: inherit;
+    height: inherit;
+    position: fixed;
+    text-align: center;
+    margin: 24px;
+    font-size: 26px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
+
+#save {
+    width: 15px;
+    height: 20px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#home {
+    height: 24px;
+    width: 24px;
+    color: #e3e3e3;
+    float: left;
+    margin: 28px 24px 24px 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .dropUp {
+        width: 70px;
+        font-size: 12px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}

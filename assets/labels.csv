@@ -1,0 +1,184 @@
+Label,ID,Color,Type
+person,0,#d60000,misc
+bicycle,1,#8c3bff,transport
+car,2,#018700,transport
+motorcycle,3,#00acc6,transport
+airplane,4,#97ff00,transport
+bus,5,#ff7ed1,transport
+train,6,#6b004f,transport
+truck,7,#ffa52f,transport
+boat,8,#00009c,transport
+traffic light,9,#857067,transport
+fire hydrant,10,#004942,transport
+street sign,11,#4f2a00,transport
+stop sign,12,#00fdcf,transport
+parking meter,13,#bcb6ff,transport
+bench,14,#95b379,interior
+bird,15,#bf03b8,animal
+cat,16,#2466a1,animal
+dog,17,#280041,animal
+horse,18,#dbb3af,animal
+sheep,19,#fdf490,animal
+cow,20,#4f445b,animal
+elephant,21,#a37c00,animal
+bear,22,#ff7066,animal
+zebra,23,#3f806e,animal
+giraffe,24,#82000c,animal
+hat,25,#a37bb3,misc
+backpack,26,#344d00,misc
+umbrella,27,#9ae4ff,misc
+shoe,28,#eb0077,misc
+eye glasses,29,#2d000a,misc
+handbag,30,#5d90ff,misc
+tie,31,#00c61f,misc
+suitcase,32,#5701aa,misc
+frisbee,33,#001d00,misc
+skis,34,#9a4600,misc
+snowboard,35,#959ea5,misc
+sports ball,36,#9a425b,misc
+kite,37,#001f31,misc
+baseball bat,38,#c8c300,misc
+baseball glove,39,#ffcfff,misc
+skateboard,40,#00bd9a,misc
+surfboard,41,#3615ff,misc
+tennis racket,42,#2d2424,misc
+bottle,43,#df57ff,interior
+plate,44,#bde6bf,interior
+wine glass,45,#7e4497,interior
+cup,46,#524f3b,interior
+fork,47,#d86600,interior
+knife,48,#647438,interior
+spoon,49,#c17287,interior
+bowl,50,#6e7489,interior
+banana,51,#809c03,food
+apple,52,#bd8a64,food
+sandwich,53,#623338,food
+orange,54,#cacdda,food
+broccoli,55,#6beb82,food
+carrot,56,#213f69,food
+hot dog,57,#a17eff,food
+pizza,58,#fd03ca,food
+donut,59,#75bcfd,food
+cake,60,#d8c382,food
+chair,61,#cda3cd,interior
+couch,62,#6d4f00,interior
+potted plant,63,#006974,interior
+bed,64,#469e5d,interior
+mirror,65,#93c6bf,interior
+dining table,66,#f9ff00,interior
+window,67,#bf5444,interior
+desk,68,#00643b,interior
+toilet,69,#5b4fa8,interior
+door,70,#521f64,interior
+tv,71,#4f5eff,interior
+laptop,72,#7e8e77,interior
+mouse,73,#b808f9,interior
+remote,74,#8a91c3,interior
+keyboard,75,#b30034,interior
+cell phone,76,#87607e,interior
+microwave,77,#9e0075,interior
+oven,78,#ffddc3,interior
+toaster,79,#500800,interior
+sink,80,#1a0800,interior
+refrigerator,81,#4b89b5,interior
+blender,82,#00dfdf,interior
+book,83,#c8fff9,interior
+clock,84,#2f3415,interior
+vase,85,#ff2646,interior
+scissors,86,#ff97aa,misc
+teddy bear,87,#03001a,misc
+hair drier,88,#c860b1,misc
+toothbrush,89,#c3a136,misc
+hair brush,90,#7c4f3a,misc
+banner,91,#f99e77,interior
+blanket,92,#566464,misc
+branch,93,#d193ff,exterior
+bridge,94,#2d1f69,exterior
+building-other,95,#411a34,exterior
+bush,96,#af9397,exterior
+cabinet,97,#629e99,interior
+cage,98,#bcdd7b,misc
+cardboard,99,#ff5d93,misc
+carpet,100,#0f2823,misc
+ceiling-other,101,#b8bdac,interior
+ceiling-tile,102,#743b64,interior
+cloth,103,#0f000c,misc
+clothes,104,#7e6ebc,misc
+clouds,105,#aaaaaa,exterior
+counter,106,#ff4600,interior
+cupboard,107,#7e0087,interior
+curtain,108,#ffcd3d,interior
+desk-stuff,109,#2f3b42,interior
+dirt,110,#fda5ff,misc
+door-stuff,111,#89013d,interior
+fence,112,#752b01,misc
+floor-marble,113,#0a8995,interior
+floor-other,114,#050052,interior
+floor-stone,115,#8ed631,interior
+floor-tile,116,#52c372,interior
+floor-wood,117,#465970,interior
+flower,118,#570121,exterior
+fog,119,#a52101,exterior
+food-other,120,#90934b,food
+fruit,121,#00421d,food
+furniture-other,122,#8000d1,interior
+grass,123,#1dc331,exterior
+gravel,124,#bf3883,exterior
+ground-other,125,#f4ffd4,exterior
+hill,126,#00d3ff,exterior
+house,127,#6900f7,exterior
+leaves,128,#9cbad1,exterior
+light,129,#79d8aa,interior
+mat,130,#69565d,interior
+metal,131,#006905,misc
+mirror-stuff,132,#36369c,interior
+moss,133,#018246,exterior
+mountain,134,#3c3732,exterior
+mud,135,#07a5ef,exterior
+napkin,136,#ff802f,misc
+net,137,#a754b8,misc
+paper,138,#675982,misc
+pavement,139,#72ffff,interior
+pillow,140,#d88701,misc
+plant-other,141,#bad3ff,exterior
+plastic,142,#8e362f,misc
+platform,143,#a7a080,interior
+playingfield,144,#007ce2,exterior
+railing,145,#8e7e8e,exterior
+railroad,146,#994487,exterior
+river,147,#003996,exterior
+road,148,#aeaac8,exterior
+rock,149,#a06062,exterior
+roof,150,#4b3a77,interior
+rug,151,#6b8282,interior
+salad,152,#f0dde6,food
+sand,153,#ffbad3,exterior
+sea,154,#363ea7,exterior
+shelf,155,#b3ffa8,interior
+sky-other,156,#5fdbff,exterior
+skyscraper,157,#d6526e,exterior
+snow,158,#959efd,exterior
+solid-other,159,#7c7e00,misc
+stairs,160,#759eb8,interior
+stone,161,#db877e,exterior
+straw,162,#111318,exterior
+structural-other,163,#d482d4,exterior
+table,164,#9e00bf,interior
+tent,165,#dbefff,exterior
+textile-other,166,#8eaa9a,misc
+towel,167,#706442,misc
+tree,168,#8c682f,exterior
+vegetable,169,#084d5e,food
+wall-brick,170,#9cb844,interior
+wall-concrete,171,#d8ddd4,interior
+wall-other,172,#caff6b,interior
+wall-panel,173,#b364eb,interior
+wall-stone,174,#465d33,interior
+wall-tile,175,#009e7c,interior
+wall-wood,176,#c14100,interior
+water-other,177,#4fbcba,exterior
+waterdrops,178,#d88ab1,exterior
+window-blind,179,#5b72b5,interior
+window-other,180,#4b4101,interior
+wood,181,#95825d,interior
+unlabeled,182,#000000,misc
