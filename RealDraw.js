@@ -10,7 +10,7 @@ var newimg, strokeRecord;
 var renderNewImg = false;
 var bruSize = 20;
 var brushIncrement = 7;
-var url = 'http://192.168.1.41:8000/query';
+var url = 'http://192.168.1.37:8000/query';
 var mouseRel = true;
 var loadAnim, createAnim;
 var first = true;
@@ -122,6 +122,8 @@ function getCurrentColor(a) {
     currentLabelColor = color(currentColor);
 }
 
+
+
 function newDrawing(data) {
     renderNewImg = true;
     if (data && data.output) {
@@ -136,12 +138,28 @@ function saveImage() {
 function sendImage() {
     if (myCanvas && myCanvas.elt) {
         drawing.loadPixels();
-        post_image = drawing.canvas.toDataURL('image/png64'),
-            postData = {
-                semantic_map: post_image
-            };
-        httpPost(url, 'json', postData, (output) => {
-            newDrawing(output);
-        });
+        console.log("asdasdas");
+        const inputs = {
+            "semantic_map": drawing.canvas.toDataURL('image/png64')
+        };
+
+        fetch("https://spade-coco-1368d406.hosted-models.runwayml.cloud/v1/query", {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Authorization": "Bearer +H8RtDL3nznR7nyveN6bKQ==",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(inputs)
+            })
+            .then(response => response.json())
+            .then(outputs => {
+                const {
+                    output
+                } = outputs;
+                newDrawing(outputs);
+                // use the outputs in your project
+            });
+
     }
 }
