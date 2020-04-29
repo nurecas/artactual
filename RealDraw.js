@@ -147,7 +147,7 @@ function sendImage() {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",
-                    "Authorization": "Bearer +H8RtDL3nznR7nyveN6bKQ==",
+                    "Authorization": "Bearer +H8RtDL3nynR7nzveN6bKQ==",
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(inputs)
