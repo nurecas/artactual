@@ -10,7 +10,7 @@ var newimg, strokeRecord;
 var renderNewImg = false;
 var bruSize = 20;
 var brushIncrement = 7;
-var url = 'http://192.168.1.41:8000/query';
+var url = 'http://192.168.1.37:8000/query';
 var mouseRel = true;
 var loadAnim, createAnim;
 var first = true;
